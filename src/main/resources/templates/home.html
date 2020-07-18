@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html 
+ lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
+
+
+
+<head>
+	<title>Sipes</title>
+	
+	
+	<!-- Meta tags Obrigatórias -->
+  	
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	
+
+	<!-- Bootstrap core CSS -->
+	<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	
+	<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"   >
+	
+	
+	<!-- Custom styles for this template -->
+
+</head>
+<body>
+
+
+<header>
+	<div class="card-body ">
+ 		<div class="card-header text-center ">
+  			<h5 class="card-header">Sistema de Pessoal da Câmara dos Deputados</h5> 				 
+  		</div>
+  		
+  		
+</div>
+</header>
+
+<div class="card-body  col-md-12" >
+<div class="card-header text-center btn-lg ">
+
+	<div class="row ">
+     <div class="col-md-6">
+        <a href="/usuario/listar" class="btn btn-block btn-lg btn-success  rounded" >
+            <i class="fa fa-user " id="icone_grande"   style =  "font-size: 8rem; color:white"></i> <br><br>
+            <span class="texto_grande" style =  "font-size: 2.5rem; color:white">
+            Cadastro de Usuários</span></a>
+      </div>
+      <div class="col-md-6">
+        <a   href="/unidade/listar" class="btn btn-block btn-lg btn-primary rounded">
+            <i class="fa fa-building" id="icone_grande" style =  "font-size: 8rem; color:#fff"></i> <br><br>
+            <span class="texto_grande" style =  "font-size: 2.5rem; color:white">
+           Unidades Câmara</span></a>
+      </div>  
+      
+</div>
+<br>
+	<div class="row ">
+     <div class="col-md-6">
+        <a href="/permissao/listar" class="btn btn-block btn-lg btn-secondary  rounded" >
+            <i class="fa fa-check " id="icone_grande"   style =  "font-size: 8rem; color:white"></i> <br><br>
+            <span class="texto_grande" style =  "font-size: 2.5rem; color:white">
+            Permissões do Usuário</span></a>
+      </div>
+      <div class="col-md-6">
+        <a href = "perfil/listar" class="btn btn-block btn-lg btn-info rounded">
+            <i class="fa fa-desktop" id="icone_grande" style =  "font-size: 8rem; color:#fff"></i> <br><br>
+            <span class="texto_grande" style =  "font-size: 2.5rem; color:white">
+           Perfis</span></a>
+      </div>  
+      
+</div>
+</div>
+
+</div>
+	
+	<footer >
+		<div class="card-body  text-center">
+			<span class="footer-copy">&copy; Gestão do Sistema: COREF / DEPES.</span>
+		</div>
+	</footer> 
+	
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	    
+
+	</script>
+</body>
+</html>

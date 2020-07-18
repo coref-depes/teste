@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html 
+ lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"   >
+
+  </head>
+  
+
+<body>
+
+
+
+
+<header>
+	<div class="card-body  mb-3 ">
+
+
+ 		 	<div class="card-header ">
+
+  				 <h1 class="card-titlebg-success mb-3n">Sistema de Boletim Administrativo</h1>
+  			</div>
+  			
+    </div> 
+</header>
+
+
+ 
+ 
+ <div class="card-body   mb-3 ">
+ 		<div class="card border rounded-3" >
+ 
+
+
+
+  				 <h5 class="card-header ">Cadasto de unidades de acesso ao Sistema - Inclusão</h5>
+				
+	</div>
+</div>
+
+ 		
+  <form th:action= "@{/unidade/salvar}"   th:object="${unidade}" method="POST">
+ <div class="card-body   mb-3 ">
+ 		<div class="card border rounded-3" >
+ 
+<div class="form-row col-md-12">
+            
+		<div class="form-group col-md-1 ">	 
+ 			<label for = "codigo" >Cod Sigesp</label>
+			<input type="text" class="form-control" id="codigo"  th:field="*{cod_unidade_camara}"   />
+		</div>
+  
+ 		 <div class="form-group col-md-1 ">	                	                               
+			<label for="sigla">Sigla</label>
+			<input type="text" class="form-control" id="sigla" th:field="*{sig_unidade_camara}"  />
+		</div>
+		
+		 <div class="form-group col-md-3 ">	                	                               
+			<label for="nome">Descrição</label>
+			<input type="text" class="form-control" id="genero" th:field="*{nom_unidade_camara}"  />
+		</div>	
+		<div class="form-group col-md-3 ">	                	                               
+			<label for="cargoautoridade">cargo da autoridade</label>
+			<input type="text" class="form-control" id="cargoautoridade" th:field="*{des_autoridade}" />
+		</div>
+	
+
+</div> 
+
+<div class="form-row col-md-12">
+            
+
+		<div class="form-group col-md-1 ">	 
+ 			<label for = "ordem" >N. ordem</label>
+			<input type="text" class="form-control" id="ordem"  th:field="*{num_ordem}"   />
+		</div>
+ 
+ 
+		<div class="form-group col-md-1">   
+			<label   for ="ind_genero" >Gênero</label>
+	 		<select  id ="ind_genero" class="form-control"   th:field="*{ind_genero}">
+   			 <option th:value="A" th:text="DA"></option>
+   			 <option th:value="O" th:text="DO"></option>
+			</select>
+ 		</div>
+ 
+ 
+ 		 <div class="form-group col-md-3 ">	                	                               
+			<label for="autoridade">Título da matéria</label>
+			<input type="text" class="form-control" id="autoridade" th:field="*{des_titulo_materia}"  />
+		</div>
+
+ 		 <div class="form-group col-md-3 ">	                	                               
+			<label for="autoridade">Título matéria</label>
+			<input type="text" class="form-control" id="autoridade" th:field="*{nom_autoridade}"  />
+		</div>
+		
+
+</div> 
+
+
+
+</div>
+</div>
+
+ <div class="card-body   col-mb-2">
+  <button type="submit" class="btn btn-primary btn-lg col-md-1">Salvar</button>
+
+ 		 <a th:href="@{/unidade/listar}" class="btn  btn-outline-success  btn-lg active col-md-1">Voltar</a>
+
+</div>
+  
+ 
+ 
+ 
+              
+ </form> 
+
+ 
+
+
+<div class="card-footer text-muted/">
+</div>
+		
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">	
+$(document).ready(function(){
+	  
+    $("p").on("click", function(){
+        //comandos a serem executados
+    });
+});
+</script>	
+	
+</body>
+</html>			

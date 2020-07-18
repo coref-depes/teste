@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html 
+ lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"   >
+    	<link href="/css/estilosMenu.css" rel="stylesheet" />
+
+
+  </head>
+  
+ 
+<body>
+
+<header>
+	<div class="card-body ">
+ 
+ 	<div class="card-header ">
+
+  				 <h1 class="card-titlebg-success">Sistema de Boletim Administrativo</h1>
+  	</div>
+
+	</div> 
+  
+		<div class="card-body ">
+  				 <h5 class="card-header ">Cadasto de permissões de acesso dos usuários do Sistema</h5>				
+	     
+ 
+ 
+<div th:replace="fragments/alert"></div>
+  </div> 
+
+ </header>
+	        
+<form class="form-inline" method="GET" th:action="@{/permissao/novo/{}}">	
+<div class="card-body ">
+                           
+        
+  <div class="form-row col-md-10">
+  <div class="form-group col-md-4">	
+	 	<div class="form-group mx-sm-3 mb-2">
+ 				
+	                 <a th:href="@{/sipes}" class="btn  btn-outline-success  btn-md active">Voltar</a>
+	       </div>
+	       <div class="form-group form-group mx-sm-3 mb-2">     
+	           
+	                 <a class="btn btn-primary btn-md active" type="button" data-toggle="collapse" data-target="#collapsePonto"
+	                       >Incluir nova permissão</a>
+	       </div>
+	 </div>
+	   <div class="collapse form-group col-md-6" id="collapsePonto">						
+
+	     <div class="form-group form-group mx-sm-3 mb-2 ">
+  	  	<label for="numponto"><strong>Ponto</strong></label>
+  	  	</div>
+  	  	<div class="form-group form-group mx-sm-3 mb-2">
+  			 <input class="form-control" type = "text" th:name="numponto" 
+ 				  required  oninvalid="this.setCustomValidity('ponto:')" 
+				onchange="try{setCustomValidity('')}catch(e){}" >    		
+  	  	</div>
+  	 	<div class="form-group form-group mx-sm-3 mb-2">
+  			<button th:id="btn-ponto" class="btn btn-primary" type="submit">Ok</button>        
+		</div>
+  			    
+
+</div>
+</div>
+
+					
+</div>
+
+
+
+</form>	           
+
+
+
+<div class="card-body   mb-3 ">
+ 		<div class="card border rounded-3" >
+
+
+	     <table class="table table-striped table-bordered">
+			<thead class="thead-light">
+               <tr>
+	                 <th>Ponto</th>
+	                 <th>Nome</th>
+	                 <th>Perfil</th>
+	                 <th>Órgão</th>
+	                 <th>Ação</th>
+	           </tr>
+	        </thead>
+	        <tbody>
+	           <tr>	      
+	           
+	              	<tr th:each="permissao : ${permissoes}">	
+	              	<td th:text="${permissao.usuario.num_ponto_usuario}"></td>		
+	              	<td th:text="${permissao.usuario.nom_usuario}"></td>			
+					<td th:text="${permissao.perfil.nom_perfil}"></td>
+					<td th:text="${permissao.unidade.sig_unidade_camara}"></td>
+					<td >
+	  				 <a class="btn btn-primary " th:href="@{/permissao/edicao/{id} (id=${permissao.ide_objeto}) }"
+						role="button"  >Alterar </a>
+		                    
+	                          
+	                 </td>
+
+	            </tr>
+			   </tbody>
+	                </table>
+	            </div>
+
+</div>  
+
+
+
+   
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  </body>
+</html>

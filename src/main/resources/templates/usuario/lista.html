@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html 
+ lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"   >
+    	<link href="/css/estilosMenu.css" rel="stylesheet" />
+
+
+  </head>
+  
+ 
+<body>
+
+<header>
+	<div class="card-body  mb-3 ">
+ 		<div class="card border rounded-3" >
+
+ 		 	<div class="card-header ">
+
+  				 <h1 class="card-titlebg-success mb-3n">Sistema de Boletim Administrativo</h1>
+  			</div>
+  			<br>
+  			 <div class="card-header ">
+  				 <h5 class="card-header ">Cadasto de usuários do Sistema</h5>				
+	        </div>
+	        
+	 </div>
+ </div>
+ 
+ <div id="main" class="container-fluid">
+	
+		<div th:if="${fail} != null">
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		  <i class="oi oi-check"></i>
+		  <span>
+		  	<strong th:text="${fail}"></strong>
+		  </span>
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+	</div>
+ 
+ 
+	        
+<form class="form-inline" method="GET" th:action="@{/usuario/novo/{}}">	
+<div class="card-body ">
+                           
+        
+  <div class="form-row col-md-8">
+  <div class="form-group col-md-4">	
+	 	<div class="form-group mx-sm-3 mb-2">
+ 				
+	                 <a th:href="@{/sipes}" class="btn  btn-outline-success  btn-md active">Voltar</a>
+	       </div>
+	       <div class="form-group form-group mx-sm-3 mb-2">     
+	           
+	                 <a class="btn btn-primary btn-md active" type="button" data-toggle="collapse" data-target="#collapsePonto"
+	                       >Incluir usuário</a>
+	       </div>
+	 </div>
+	   <div class="collapse form-group col-md-6" id="collapsePonto">						
+
+	     <div class="form-group form-group mx-sm-3 mb-2 ">
+  	  	<label for="numponto"><strong>Ponto</strong></label>
+  	  	</div>
+  	  	<div class="form-group form-group mx-sm-3 mb-2">
+  			 <input class="form-control" type = "text" th:name="numponto" 
+ 				  required  oninvalid="this.setCustomValidity('ponto:')" 
+				onchange="try{setCustomValidity('')}catch(e){}" >    		
+  	  	</div>
+  	 	<div class="form-group form-group mx-sm-3 mb-2">
+  			<button th:id="btn-ponto" class="btn btn-primary" type="submit">Ok</button>        
+		</div>
+  			    
+
+</div>
+</div>
+
+					
+</div>
+
+</form>	   
+
+</div>
+
+        
+
+</header>
+
+
+
+
+<div class="card-body   mb-3 ">
+ 		<div class="card border rounded-3" >
+
+
+	     <table class="table table-striped table-bordered">
+			<thead class="thead-light">
+               <tr>
+	                 <th>Ponto</th>
+	                 <th>Nome</th>
+	                 <th>Situacao</th>
+	                 <th>Ação</th>
+	           </tr>
+	        </thead>
+	        <tbody>
+	           <tr>	      
+	           
+	              	<tr th:each="usuario : ${usuarios}">	
+	              	<td th:text="${usuario.num_ponto_usuario}"></td>		
+	              	<td th:text="${usuario.nom_usuario}"></td>			
+					<td th:text="${usuario.situacao}"></td>
+					<td >
+	  				 <a class="btn btn-primary " th:href="@{/usuario/edicao/{id} (id=${usuario.ide_objeto}) }"
+						role="button"  >Alterar </a>
+		                    
+	                          
+	                 </td>
+
+	            </tr>
+			   </tbody>
+	                </table>
+	            </div>
+
+</div>  
+
+
+
+   
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  </body>
+</html>

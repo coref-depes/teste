@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html 
+ lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    >
+
+
+  </head>
+  
+ 
+<body>
+
+<header>
+	<div class="card-body  mb-3 ">
+ 		<div class="card border rounded-3" >
+
+ 		 	<div class="card-header ">
+
+  				 <h1 class="card-titlebg-success mb-3n">Sistema de Boletim Administrativo</h1>
+  			</div>
+  			<br>
+  			 <div class="card-header ">
+  				 <h5 class="card-header ">Cadasto de Unidades de acesso ao Sistema</h5>
+				
+	        </div>
+  			<p></p>
+ 				<P>
+ 				 	                 <a th:href="@{/sipes}" class="btn  btn-outline-success  btn-lg active">Voltar</a>
+	                 <a th:href="@{/unidade/novo}" class="btn btn-primary btn-lg active">Criar nova unidade</a>
+	                                
+	             </p>   
+	            
+  		</div> 
+    </div> 
+</header>
+
+
+
+
+<div class="card-body   mb-3 ">
+ 		<div class="card border rounded-3" >
+
+
+	     <table class="table table-striped table-bordered">
+			<thead class="thead-light">
+               <tr>
+	                 <th>N. ordem</th>
+	                 <th>Cód. SIGESP</th>
+	                 <th>Autoridade</th>
+	                 <th>Título Matéria</th>
+	                 <th>Ind. genero</th>
+	                 <th>Autoridade</th>
+	                 <th>Ação</th>
+	           </tr>
+	        </thead>
+	        <tbody>
+	           <tr>	      
+	           
+	              	<tr th:each="unidade : ${unidades}">		
+	              	<td th:text="${unidade.num_ordem}"></td>	
+	              	<td th:text="${unidade.cod_unidade_camara}"></td>
+	              	<td th:text="${unidade.des_autoridade}"></td>
+	              	<td th:text="${unidade.des_titulo_materia}"></td>
+	              	<td th:text="${unidade.ind_genero}"></td>	
+	              	<td th:text="${unidade.nom_autoridade}"></td>
+					
+					<td >
+	  				 <a class="btn btn-primary " th:href="@{/unidade/edicao/{id} (id=${unidade.ide_objeto}) }"
+								role="button"  >Alterar </a>
+		                    
+	                          
+	                 </td>
+
+	            </tr>
+			   </tbody>
+	                </table>
+	            </div>
+
+</div>  
+
+
+
+   
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  </body>
+</html>
